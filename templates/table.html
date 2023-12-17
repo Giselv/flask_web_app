@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Files Table</title>
+    <!-- You can include Bootstrap CSS or other stylesheets here if you want -->
+</head>
+<body>
+    <h1>Audio Files Table</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Overall Tempo</th>
+                <th>Peak 1</th>
+                <th>Peak 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.filename }}</td>
+                <td>{{ item.overall_tempo }}</td>
+                <td>{{ item.peak_1 }}</td>
+                <td>{{ item.peak_2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('export') }}" class="btn btn-primary">Export to Excel</a>
+
+</body>
+</html>
